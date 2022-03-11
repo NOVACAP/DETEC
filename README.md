@@ -8,16 +8,16 @@
 </p>
 
 ## About project
-1- composer create-project laravel/laravel detec-app
-2- cd detec-app
-3- php artisan serve
-4- php artisan make:model Activity -m
-5- php artisan make:model Interested -m
-6- php artisan make:model TechniqueArea -m 
-7- php artisan make:model ThematicArea -m  
-8- php artisan make:model AdministrativeRegion -m   
-9- php artisan make:model Section -m  
-10- php artisan make:model Process -m
+1. composer create-project laravel/laravel detec-app
+2. cd detec-app
+3. php artisan serve
+4. php artisan make:model Activity -m
+5. php artisan make:model Interested -m
+6. php artisan make:model TechniqueArea -m 
+7. php artisan make:model ThematicArea -m  
+8. php artisan make:model AdministrativeRegion -m   
+9. php artisan make:model Section -m  
+10. php artisan make:model Process -m
 
 ## About Laravel
 
