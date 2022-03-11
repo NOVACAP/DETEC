@@ -8,8 +8,8 @@
 </p>
 
 ## About project
-1. composer create-project laravel/laravel detec-app
-2. cd detec-app
+1. composer create-project laravel/laravel DETEC
+2. cd DETEC
 3. php artisan serve
 4. php artisan make:model Activity -m
 5. php artisan make:model Interested -m
