@@ -18,6 +18,7 @@
 8- php artisan make:model AdministrativeRegion -m   
 9- php artisan make:model Section -m  
 10- php artisan make:model Process -m
+11-php artisan make:model SectionProcess -m
 
 ## About Laravel
 

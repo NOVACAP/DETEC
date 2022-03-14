@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('processes', function (Blueprint $table) {
             $table->id();
             $table->integer('number_process');
-            $table->unsignedBigInteger('section_process_id');
-
+            //$table->unsignedBigInteger('section_process_id')->nullable();
             $table->timestamps();
+
+            //$table->foreign('section_process_id')->references('id')->on('section_process')->onDelete('cascade');
         });
     }
 
