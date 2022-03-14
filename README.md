@@ -8,6 +8,7 @@
 </p>
 
 ## About project
+
 1- composer create-project laravel/laravel detec-app
 2- cd detec-app
 3- php artisan serve
@@ -19,6 +20,7 @@
 9- php artisan make:model Section -m  
 10- php artisan make:model Process -m
 11-php artisan make:model SectionProcess -m
+
 
 ## About Laravel
 
