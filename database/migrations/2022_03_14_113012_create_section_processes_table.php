@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('section_processes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('sections_id');
-            $table->unsignedBigInteger('processes_id');
             $table->timestamps();
 
             $table->foreignId('sections_id')->constrained();
