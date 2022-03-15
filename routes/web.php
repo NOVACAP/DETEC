@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActivityController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +22,24 @@ Route::get('/', function () {
 Route::get('/teste', function () {
     return view('teste');
 });
+
+Route::controller(ActivityController::class)->group(function(){
+
+    Route::get('activities', 'index')->name('activities.index');
+
+    Route::post('activities', 'store')->name('activities.store');
+
+    Route::get('activities/create', 'create')->name('activities.create');
+
+    Route::get('activities/{item}', 'show')->name('activities.show');
+
+    Route::put('activities/{item}', 'update')->name('activities.update');
+
+    Route::delete('activities/{item}', 'destroy')->name('activities.destroy');
+
+    Route::get('activities/{item}/edit', 'edit')->name('activities.edit');
+
+});
+
+
 

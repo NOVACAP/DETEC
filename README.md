@@ -20,6 +20,9 @@
 9. php artisan make:model Section -m  
 10. php artisan make:model Process -m
 11. php artisan make:model SectionProcess -m
+12. php artisan make:controller ActivityController --resource --model=
+13. create group route controller for ActivityController
+
 
 
 ## About Laravel
