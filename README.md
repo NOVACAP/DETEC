@@ -22,6 +22,11 @@
 11. php artisan make:model SectionProcess -m
 12. php artisan make:controller ActivityController --resource --model=Activity
 13. create group route controller for ActivityController
+14. php artisan make:model Employer -m  
+15. php artisan make:model DemandsEmployer -m
+16. php artisan make:model Demand -m
+17. Update model using protected $fillable
+18. defining relationships (section, section_process and process)
 
 
 

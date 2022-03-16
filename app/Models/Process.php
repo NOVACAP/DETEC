@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Process extends Model
 {
-    protected $fillable = ['administrative_region_name'];
+    protected $fillable = ['number_process' , 'section_processes_id'];
     use HasFactory;
     
 }

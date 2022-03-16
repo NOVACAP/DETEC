@@ -15,14 +15,20 @@ return new class extends Migration
     { 
         Schema::create('section_processes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
-            $table->foreignId('sections_id')->constrained();
-            //$table->foreign('sections_id')->references('id')->on('sections')->onDelete('cascade');
-            $table->foreignId('processes_id')->constrained();
-            //$table->foreign('processes_id')->references('id')->on('processes')->onDelete('cascade');
+            $table->timestamps();         
             
+            $table->foreignId('section_id')->constrained()->onDelete('cascade');
+            $table->foreignId('process_id')->constrained()->onDelete('cascade');
         });
+
+        Schema::table('processes', function (Blueprint $table) {
+
+            $table->foreignId('section_process_id')->nullable()->constrained()->onDelete('cascade');
+           
+        });
+
+
+
     }
 
     /**
@@ -31,7 +37,13 @@ return new class extends Migration
      * @return void
      */
     public function down()
+
     {
+        Schema::table('processes', function (Blueprint $table) {
+            $table->dropForeign('processes_section_process_id_foreign'); //[table]_[column]_foreign
+            $table->dropColumn('section_process_id');
+        });
+       
         Schema::dropIfExists('section_processes');
     }
 };

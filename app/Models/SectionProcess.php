@@ -7,13 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class SectionProcess extends Model
 {
+    protected $fillable = ['sections_id' , 'processes_id' ];
     use HasFactory;
 
-    public function sections(){
-        return $this->belongsToMany(Section::class);
-    }
-
     public function processes(){
-        return $this->belongsToMany(Process::class);
+        return $this->hasMany(Process::class);
     }
 }
