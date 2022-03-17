@@ -21,23 +21,17 @@ return new class extends Migration
             $table->string('address_demand' , 100);
 
             //foreign
-            $table->foreignId('activity_id')->constrained()->onDelete('cascade');
-            $table->foreignId('interested_id')->constrained()->onDelete('cascade');
-            $table->foreignId('technique_area_id')->constrained()->onDelete('cascade');
-            $table->foreignId('thematic_areas_id')->constrained()->onDelete('cascade');
-            $table->foreignId('administrative_region_id')->constrained()->onDelete('cascade');
-            $table->foreignId('process_id')->constrained()->onDelete('cascade');
-            $table->foreignId('demands_employer_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
+            $table->foreignId('interested_id')->constrained('interesteds')->onDelete('cascade');
+            $table->foreignId('technique_area_id')->constrained('technique_areas')->onDelete('cascade');
+            $table->foreignId('thematic_areas_id')->constrained('thematic_areas')->onDelete('cascade');
+            $table->foreignId('administrative_region_id')->constrained('administrative_regions')->onDelete('cascade');
+            $table->foreignId('process_id')->constrained('processes')->onDelete('cascade');
+            $table->foreignId('demands_employer_id')->nullable('demands_employers')->constrained()->onDelete('cascade');
 
             $table->timestamps();
         });
-
-            //add demands_id for demands_employer
-
-            Schema::table('demands_employers', function (Blueprint $table) {
-
-                $table->foreignId('demand_id')->nullable()->constrained()->onDelete('cascade');
-            });   
+            
     }
 
     /**
@@ -47,11 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-
-        Schema::table('demands_employers', function (Blueprint $table) {
-            $table->dropForeign('demands_employers_demand_id_foreign'); //[table]_[column]_foreign
-            $table->dropColumn('demand_id');
-        });
 
         Schema::dropIfExists('demands');
     }

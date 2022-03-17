@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Process extends Model
 {
     protected $fillable = ['number_process' , 'section_processes_id'];
+
+    public function sections(){
+        return $this->belongsToMany(Section::class);
+    }
+    
+
+
     use HasFactory;
     
 }

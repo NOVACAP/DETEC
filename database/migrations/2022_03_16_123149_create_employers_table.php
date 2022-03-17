@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('employer_name', 100);
             $table->string('employer_registration', 9);
             $table->string('employer_function', 50);
-            
             $table->timestamps();
         });
     }

@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Interested extends Model
 {
     protected $fillable = ['interested_name'];
+
+    public function demands(){
+        return $this->hasMany(Demand::class , 'foreign_key');
+    }
+    
     use HasFactory;
 }

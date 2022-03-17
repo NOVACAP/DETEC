@@ -13,10 +13,10 @@
 
     
      <!--CSS da aplicação-->
-     <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+     <link href="{{asset ('css/bootstrap.min.css')}}" rel="stylesheet">
+     <link href="{{asset ('css/style.css')}}" rel="stylesheet">
      
-    <!--Bootstrap-->
-    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
+   
 
 </head>
 <body>
@@ -51,9 +51,9 @@
     {{-- content --}}
     @yield('content')
     
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.esm.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset ('js/bootstrap.min.js')}}"></script>
+    
+
 
 </body>
 </html>
