@@ -19,21 +19,21 @@
 8. php artisan make:model AdministrativeRegion -m   
 9. php artisan make:model Section -m  
 10. php artisan make:model Process -m
-14. php artisan make:model Employer -m  
-15. php artisan make:model DemandsEmployer -m
-16. php artisan make:model Demand -m
-17. php artisan make:migration add_demands_employer_id_to_employers_table
-18. php artisan make:migration add_demand_id_to_demands_employers_table
-19. php artisan make:model ProcessSection -m
-20. php artisan make:migration add_process_section_id_to_processes_table     
-21. php artisan make:controller ActivityController --resource --model=Activity
-22. create group route controller for ActivityController
-23. Update model using protected $fillable
-24. defining relationships (section, section_process and process)
-25. defining relationships
-26. php artisan make:seeder ActivitySeeder
+11. php artisan make:model Employer -m  
+12. php artisan make:model DemandsEmployer -m
+13. php artisan make:model Demand -m
+14. php artisan make:migration add_demands_employer_id_to_employers_table
+15. php artisan make:migration add_demand_id_to_demands_employers_table
+16. php artisan make:model ProcessSection -m
+17. php artisan make:migration add_process_section_id_to_processes_table     
+18. php artisan make:controller ActivityController --resource --model=Activity
+19. create group route controller for ActivityController
+20. Update model using protected $fillable
+21. defining relationships (section, section_process and process)
+22. defining relationships
+23. php artisan make:seeder ActivitySeeder
 
-# About clone , organize and install to start local
+# About clone, organize and install to start local
 1. Run git clone <my-cool-project>
 2. Run composer install
 3. Run cp .env.example .env
