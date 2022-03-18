@@ -32,6 +32,16 @@
 21. defining relationships (section, section_process and process)
 22. defining relationships
 23. php artisan make:seeder ActivitySeeder
+24. create folder techniqueAreas in views and create file index in techniqueAreas
+25. php artisan make:controller TechniqueAreaController --resource
+26. create group route controller for TechniqueAreaController
+27. create folder thematicAreas in views and create file index in thematicAreas
+28. php artisan make:controller ThematicAreaController --resource
+29. create group route controller for ThematicAreaController
+30. create folder interesteds in views and create file index in interesteds
+31. php artisan make:controller InterestedController --resource 
+32. create group route controller for InterestedController
+
 
 # About clone, organize and install to start local
 1. Run git clone <my-cool-project>

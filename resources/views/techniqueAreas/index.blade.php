@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title' , 'SISDEMANDAS | Atividades')
+@section('title' , 'SISDEMANDAS | Áreas técnicas')
 
 @section('content')
  <!-- content -->
@@ -11,9 +11,9 @@
         <div class="card">
             <div class="card-header card-title">
               <div class="d-flex align-items-center">
-                <h2 class="mb-0">Todas as atividades</h2>
+                <h2 class="mb-0">Todas as áreas técnicas</h2>
                 <div class="ml-auto">
-                  <a href="{{route('activities.create')}}" class="btn btn-success">
+                  <a href="{{route('techniqueAreas.create')}}" class="btn btn-success">
                       <i class="fa fa-plus-circle"></i> Adicionar nova</a>
                 </div>
               </div>
@@ -23,7 +23,7 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Atividades</th>
+                  <th scope="col">Área Técnica</th>
                   
                 </tr>
               </thead>
@@ -31,10 +31,10 @@
                   {{-- @if ($message = session('message'))
                     <div class="alert alert-success">{{ $message}}</div>
                   @endif--}}
-                @if ($activities->count())
-                    @foreach ($activities as $index => $activity)
+                @if ($techniqueAreas->count())
+                    @foreach ($techniqueAreas as $index => $techniqueArea)
                        <tr>
-                        <td>{{ $activity->activity_name}}</td>
+                        <td>{{ $techniqueArea->technique_area_name}}</td>
                         
                        {{-- <td width="150">
                             <a href="{{ route('activities.show', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>

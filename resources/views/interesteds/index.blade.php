@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title' , 'SISDEMANDAS | Atividades')
+@section('title' , 'SISDEMANDAS | Interessados')
 
 @section('content')
  <!-- content -->
@@ -11,10 +11,10 @@
         <div class="card">
             <div class="card-header card-title">
               <div class="d-flex align-items-center">
-                <h2 class="mb-0">Todas as atividades</h2>
+                <h2 class="mb-0">Todas os interessados</h2>
                 <div class="ml-auto">
                   <a href="{{route('activities.create')}}" class="btn btn-success">
-                      <i class="fa fa-plus-circle"></i> Adicionar nova</a>
+                      <i class="fa fa-plus-circle"></i> Adicionar novo</a>
                 </div>
               </div>
             </div>
@@ -31,10 +31,10 @@
                   {{-- @if ($message = session('message'))
                     <div class="alert alert-success">{{ $message}}</div>
                   @endif--}}
-                @if ($activities->count())
-                    @foreach ($activities as $index => $activity)
+                @if ($interesteds->count())
+                    @foreach ($interesteds as $index => $interested)
                        <tr>
-                        <td>{{ $activity->activity_name}}</td>
+                        <td>{{ $interested->interested_name}}</td>
                         
                        {{-- <td width="150">
                             <a href="{{ route('activities.show', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
