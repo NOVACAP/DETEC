@@ -21,6 +21,8 @@ class Demand extends Model
         'demands_employer_id',
       ];
 
+      use HasFactory;
+
     //relationship one to many with interested table
       public function interested(){
         return $this->belongsTo(Interested::class , 'foreign_key');
@@ -37,7 +39,7 @@ class Demand extends Model
       }
 
       public function DemandsEmployer(){
-        return $this->belongsTo(DemandsEmployer::class , 'foreign_key');
+        return $this->belongsToMany(DemandsEmployer::class , 'foreign_key');
       }
 
       public function techniqueArea(){
@@ -48,5 +50,5 @@ class Demand extends Model
         return $this->belongsToMany(Activity::class , 'foreign_key');
     }
       
-    use HasFactory;
+    
 }    

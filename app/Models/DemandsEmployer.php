@@ -9,9 +9,14 @@ class DemandsEmployer extends Model
 {
     protected $fillable = ['demands_employers' , 'employer_id' , 'demand_id'];
 
-    public function demands(){
-        return $this->hasMany(Demand::class , 'foreign_key');
+    use HasFactory;
+
+    public function demand(){
+        return $this->belongsTo(Demand::class , 'foreign_key');
+    }
+
+    public function employers(){
+        return $this->belongsToMany(Employer::class);
     }
     
-    use HasFactory;
 }

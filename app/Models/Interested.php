@@ -9,9 +9,11 @@ class Interested extends Model
 {
     protected $fillable = ['interested_name'];
 
+    use HasFactory;
+
     public function demands(){
         return $this->hasMany(Demand::class , 'foreign_key');
     }
     
-    use HasFactory;
+   
 }

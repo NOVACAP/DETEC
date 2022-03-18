@@ -11,7 +11,7 @@ class Section extends Model
     use HasFactory;
 
     public function processesSections(){
-        return $this->hasMany(processesSection::class);
+        return $this->hasMany(ProcessSection::class);
     }
 
     public function processes(){

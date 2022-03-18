@@ -9,15 +9,16 @@ class ProcessSection extends Model
 {
     protected $fillable = ['sections_id' , 'processes_id' ];
    
-
+    use HasFactory;
+    
     //relationship one to many with section table
     public function section(){
         return $this->belongsTo(Section::class , 'foreign_key');
     }
 
-    //public function process(){
-     //   return $this->hasMany(Process::class);
-    //}
+    public function process(){
+        return $this->belongsToMany(Process::class);
+    }
 
-    use HasFactory;
+    
 }

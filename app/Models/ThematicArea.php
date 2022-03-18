@@ -9,9 +9,11 @@ class ThematicArea extends Model
 {
     protected $fillable = ['thematic_area_name' ];
 
+    use HasFactory;
+
     public function demands(){
         return $this->hasMany(Demand::class , 'foreign_key');
     }
 
-    use HasFactory;
+    
 }
