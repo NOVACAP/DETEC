@@ -29,7 +29,7 @@ class ActivitySeeder extends Seeder
         
 
 
-        foreach ($activities as $activity) {
+        foreach ($activities as $index => $activity) {
             Activity::updateOrCreate(['id' => $activity['id']], $activity);
         }
 

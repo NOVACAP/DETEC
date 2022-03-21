@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header card-title">
               <div class="d-flex align-items-center">
-                <h2 class="mb-0">Todas os interessados</h2>
+                <h2 class="mb-0">Todos os interessados</h2>
                 <div class="ml-auto">
                   <a href="{{route('activities.create')}}" class="btn btn-success">
                       <i class="fa fa-plus-circle"></i> Adicionar novo</a>
@@ -23,7 +23,7 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Atividades</th>
+                  <th scope="col">Interessados</th>
                   
                 </tr>
               </thead>

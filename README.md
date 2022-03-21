@@ -48,6 +48,10 @@
 37. create group route controller for SectionController
 38. php artisan make:seeder ActivitySeeder
 39. php artisan db:seed --class=ActivitySeeder
+40. php artisan make:seeder InterestedSeeder
+41. php artisan db:seed --class=InterestedSeeder
+42. php artisan make:seeder TechniqueAreaSeeder
+43. php artisan db:seed --class=TechniqueAreaSeeder    
 
 
 
