@@ -5,6 +5,8 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\TechniqueAreaController;
 use App\Http\Controllers\ThematicAreaController;
 use App\Http\Controllers\InterestedController;
+use App\Http\Controllers\AdministrativeRegionController;
+use App\Http\Controllers\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +104,45 @@ Route::controller(InterestedController::class)->group(function(){
     Route::get('interesteds/{item}/edit', 'edit')->name('interesteds.edit');
 
 });
+
+Route::controller(AdministrativeRegionController::class)->group(function(){
+
+    Route::get('administrative-regions', 'index')->name('administrativeRegions.index');
+
+    Route::post('administrative-regions', 'store')->name('administrativeRegions.store');
+
+    Route::get('administrative-regions/create', 'create')->name('administrativeRegions.create');
+
+    Route::get('administrative-regions/{item}', 'show')->name('administrativeRegions.show');
+
+    Route::put('administrative-regions/{item}', 'update')->name('administrativeRegions.update');
+
+    Route::delete('administrative-regions/{item}', 'destroy')->name('administrativeRegions.destroy');
+
+    Route::get('administrative-regions/{item}/edit', 'edit')->name('administrativeRegions.edit');
+
+});
+
+Route::controller(SectionController::class)->group(function(){
+
+    Route::get('sections', 'index')->name('sections.index');
+
+    Route::post('sections', 'store')->name('sections.store');
+
+    Route::get('sections/create', 'create')->name('sections.create');
+
+    Route::get('sections/{item}', 'show')->name('sections.show');
+
+    Route::put('sections/{item}', 'update')->name('sections.update');
+
+    Route::delete('sections/{item}', 'destroy')->name('sections.destroy');
+
+    Route::get('sections/{item}/edit', 'edit')->name('sections.edit');
+
+});
+
+
+
 
 
 

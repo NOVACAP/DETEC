@@ -41,6 +41,13 @@
 30. create folder interesteds in views and create file index in interesteds
 31. php artisan make:controller InterestedController --resource 
 32. create group route controller for InterestedController
+33. create folder administrativeRegions in views and create file index in administrativeRegions
+34. php artisan make:controller AdministrativeRegionController --resource
+35. create group route controller for SectionController
+36. create folder sections in views and create file index in sections
+37. php artisan make:controller AdministrativeRegionController --resource
+38. create group route controller for SectionController
+
 
 
 # About clone, organize and install to start local
