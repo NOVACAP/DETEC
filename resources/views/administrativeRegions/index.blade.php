@@ -32,6 +32,7 @@
                     <div class="alert alert-success">{{ $message}}</div>
                   @endif--}}
                 @if ($administrativeRegions->count())
+                
                     @foreach ($administrativeRegions as $index => $administrativeRegion)
                        <tr>
                         <td>{{ $administrativeRegion->administrative_region_name}}</td>
@@ -42,7 +43,12 @@
                             <a href="{{ route('contacts.destroy', $contact->id)}}" class="btn-delete btn btn-sm btn-circle btn-outline-danger" title="Delete"><i class="fa fa-times"></i></a>
                         </td>--}}
                         </tr>
+
+                        
+                        
                     @endforeach
+
+                    
 
                     <form id="form-delete" method="POST" style="display: none">
                         @csrf
