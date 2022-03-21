@@ -31,22 +31,25 @@
 20. Update model using protected $fillable
 21. defining relationships (section, section_process and process)
 22. defining relationships
-23. php artisan make:seeder ActivitySeeder
-24. create folder techniqueAreas in views and create file index in techniqueAreas
-25. php artisan make:controller TechniqueAreaController --resource
-26. create group route controller for TechniqueAreaController
-27. create folder thematicAreas in views and create file index in thematicAreas
-28. php artisan make:controller ThematicAreaController --resource
-29. create group route controller for ThematicAreaController
-30. create folder interesteds in views and create file index in interesteds
-31. php artisan make:controller InterestedController --resource 
-32. create group route controller for InterestedController
-33. create folder administrativeRegions in views and create file index in administrativeRegions
-34. php artisan make:controller AdministrativeRegionController --resource
-35. create group route controller for SectionController
-36. create folder sections in views and create file index in sections
-37. php artisan make:controller AdministrativeRegionController --resource
-38. create group route controller for SectionController
+23. create folder techniqueAreas in views and create file index in techniqueAreas
+24. php artisan make:controller TechniqueAreaController --resource
+25. create group route controller for TechniqueAreaController
+26. create folder thematicAreas in views and create file index in thematicAreas
+27. php artisan make:controller ThematicAreaController --resource
+28. create group route controller for ThematicAreaController
+29. create folder interesteds in views and create file index in interesteds
+30. php artisan make:controller InterestedController --resource 
+31. create group route controller for InterestedController
+32. create folder administrativeRegions in views and create file index in administrativeRegions
+33. php artisan make:controller AdministrativeRegionController --resource
+34. create group route controller for SectionController
+35. create folder sections in views and create file index in sections
+36. php artisan make:controller AdministrativeRegionController --resource
+37. create group route controller for SectionController
+38. php artisan make:seeder ActivitySeeder
+39. php artisan db:seed --class=ActivitySeeder
+
+
 
 
 
