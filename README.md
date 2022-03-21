@@ -51,7 +51,9 @@
 40. php artisan make:seeder InterestedSeeder
 41. php artisan db:seed --class=InterestedSeeder
 42. php artisan make:seeder TechniqueAreaSeeder
-43. php artisan db:seed --class=TechniqueAreaSeeder    
+43. php artisan db:seed --class=TechniqueAreaSeeder
+44. php artisan make:seeder ThematicAreaSeeder
+45. php artisan db:seed --class=ThematicAreaSeeder
 
 
 
