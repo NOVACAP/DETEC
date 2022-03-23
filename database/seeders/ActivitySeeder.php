@@ -22,8 +22,7 @@ class ActivitySeeder extends Seeder
             ['id' => 3, 'activity_name' => 'ELABORAÇÃO DE PROJETOS'],
             ['id' => 4, 'activity_name' => 'OUTRAS ATIVIDADES'],
             ['id' => 5, 'activity_name' => 'TERMO DE REFERÊNCIA'],
-            ['id' => 6, 'activity_name' => 'VISTORIA TÉCNICA
-            '],
+            ['id' => 6, 'activity_name' => 'VISTORIA TÉCNICA'],
 
         ];
         

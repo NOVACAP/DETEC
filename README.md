@@ -56,6 +56,13 @@
 45. php artisan db:seed --class=ThematicAreaSeeder
 46. php artisan make:seeder AdministrativeRegionSeeder
 47. php artisan db:seed --class=AdministrativeRegionSeeder
+48. create folder processes in views and create file index in processes
+49. php artisan make:controller ProcessController --resource
+50. create group route controller for ProcessController
+51. create folder demands in views and create file index in demands
+52. php artisan make:controller DemandController --resource
+53. create group route controller for DemandController 
+
 
 
 

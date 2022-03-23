@@ -21,6 +21,11 @@ class Demand extends Model
         'demands_employer_id',
       ];
 
+      protected $casts = [
+        'date_input_demand' => 'date:d/m/Y',
+        'date_distribution_demand' => 'date:d/m/Y',
+    ];
+
       use HasFactory;
 
     //relationship one to many with interested table

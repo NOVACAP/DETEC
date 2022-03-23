@@ -7,6 +7,8 @@ use App\Http\Controllers\ThematicAreaController;
 use App\Http\Controllers\InterestedController;
 use App\Http\Controllers\AdministrativeRegionController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\ProcessController;
+use App\Http\Controllers\DemandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ Route::get('/teste', function () {
     return view('teste');
 });
 
-//rotas de area atividades
+//route group for activities
 
 Route::controller(ActivityController::class)->group(function(){
 
@@ -47,7 +49,7 @@ Route::controller(ActivityController::class)->group(function(){
 
 });
 
-//rotas de area tecnica
+//route group for technique areas
 
 Route::controller(TechniqueAreaController::class)->group(function(){
 
@@ -67,7 +69,7 @@ Route::controller(TechniqueAreaController::class)->group(function(){
 
 });
 
-//rotas de area temática
+//route group for thematic areas
 
 Route::controller(ThematicAreaController::class)->group(function(){
 
@@ -87,6 +89,8 @@ Route::controller(ThematicAreaController::class)->group(function(){
 
 });
 
+//route group for interesteds
+
 Route::controller(InterestedController::class)->group(function(){
 
     Route::get('interesteds', 'index')->name('interesteds.index');
@@ -104,6 +108,8 @@ Route::controller(InterestedController::class)->group(function(){
     Route::get('interesteds/{item}/edit', 'edit')->name('interesteds.edit');
 
 });
+
+//route group for administrative regions
 
 Route::controller(AdministrativeRegionController::class)->group(function(){
 
@@ -123,6 +129,9 @@ Route::controller(AdministrativeRegionController::class)->group(function(){
 
 });
 
+
+//route group for sections
+
 Route::controller(SectionController::class)->group(function(){
 
     Route::get('sections', 'index')->name('sections.index');
@@ -138,6 +147,44 @@ Route::controller(SectionController::class)->group(function(){
     Route::delete('sections/{item}', 'destroy')->name('sections.destroy');
 
     Route::get('sections/{item}/edit', 'edit')->name('sections.edit');
+
+});
+
+//route group for processes
+
+Route::controller(ProcessController::class)->group(function(){
+
+    Route::get('processes', 'index')->name('processes.index');
+
+    Route::post('processes', 'store')->name('processes.store');
+
+    Route::get('processes/create', 'create')->name('processes.create');
+
+    Route::get('processes/{item}', 'show')->name('processes.show');
+
+    Route::put('processes/{item}', 'update')->name('processes.update');
+
+    Route::delete('processes/{item}', 'destroy')->name('processes.destroy');
+
+    Route::get('processes/{item}/edit', 'edit')->name('processes.edit');
+
+});
+
+Route::controller(DemandController::class)->group(function(){
+
+    Route::get('demands', 'index')->name('demands.index');
+
+    Route::post('demands', 'store')->name('demands.store');
+
+    Route::get('demands/create', 'create')->name('demands.create');
+
+    Route::get('demands/{item}', 'show')->name('demands.show');
+
+    Route::put('demands/{item}', 'update')->name('demands.update');
+
+    Route::delete('demands/{item}', 'destroy')->name('demands.destroy');
+
+    Route::get('demands/{item}/edit', 'edit')->name('demands.edit');
 
 });
 
