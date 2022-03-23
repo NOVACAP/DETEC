@@ -14,7 +14,9 @@ class Employer extends Model
         return $this->belongsToMany(demandEmployer::class);
     }
 
-    
+    public function employerType(){
+        return $this->hasOne(EmployerType::class);
+    }
 
     use HasFactory;
 }

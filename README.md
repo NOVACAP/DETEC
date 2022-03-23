@@ -62,6 +62,10 @@
 51. create folder demands in views and create file index in demands
 52. php artisan make:controller DemandController --resource
 53. create group route controller for DemandController 
+54. php artisan make:model EmployerType -m
+55. php artisan make:migration add_employer_types_to_employers_table
+56. defining relationships employer and employer_type
+
 
 
 
