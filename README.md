@@ -65,6 +65,8 @@
 54. php artisan make:model EmployerType -m
 55. php artisan make:migration add_employer_types_to_employers_table
 56. defining relationships employer and employer_type
+57. php artisan make:migration add_employer_id_to_users_table
+58. defining relationships users and employers
 
 
 

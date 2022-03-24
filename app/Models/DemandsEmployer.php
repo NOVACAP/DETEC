@@ -16,7 +16,7 @@ class DemandsEmployer extends Model
     }
 
     public function employers(){
-        return $this->belongsToMany(Employer::class);
+        return $this->belongsToMany(Employer::class, 'foreign_key');
     }
     
 }

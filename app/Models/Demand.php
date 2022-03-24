@@ -21,9 +21,9 @@ class Demand extends Model
         'demands_employer_id',
       ];
 
-      protected $casts = [
-        'date_input_demand' => 'date:d/m/Y',
-        'date_distribution_demand' => 'date:d/m/Y',
+      protected $dates = [
+        'date_input_demand',
+        'date_distribution_demand'
     ];
 
       use HasFactory;
