@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Demands;
+
+
 
 class Activity extends Model
 {
@@ -11,8 +14,8 @@ class Activity extends Model
 
     use HasFactory;
 
-    public function demands(){
-        return $this->belongsToMany(Demands::class , 'foreign_key');
+    /*public function demands(){
+        return $this->belongsToMany(Demands::class);
     }
-    
+    */
 }

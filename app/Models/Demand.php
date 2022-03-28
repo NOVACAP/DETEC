@@ -4,6 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Interested;
+use App\Models\AdministrativeRegion;
+use App\Models\ThematicArea;
+use App\Models\DemandsEmployer;
+use App\Models\TechniqueArea;
+use App\Models\Activity;
+
 
 class Demand extends Model
 {
@@ -23,7 +30,8 @@ class Demand extends Model
 
       protected $dates = [
         'date_input_demand',
-        'date_distribution_demand'
+        'date_distribution_demand',
+        'delivery_demand',
     ];
 
       use HasFactory;
@@ -51,8 +59,9 @@ class Demand extends Model
         return $this->belongsToMany(TechniqueArea::class , 'foreign_key');
       }
 
+      //classe, id da tabela activities, campo da tabela demanda que faz referencia a tabela activities 
       public function activities(){
-        return $this->belongsToMany(Activity::class , 'foreign_key');
+        return $this->hasMany(Activity::class , 'id' , 'activity_id');
     }
       
     

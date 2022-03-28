@@ -19,12 +19,25 @@
               </div>
             </div>
           <div class="card-body">
+
+          {{dd($demands) ; }}
           
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th scope="col">Data de Entrada</th>
                   <th scope="col">Data de distribuição</th>
+                  <th scope="col">Data de entrega</th>
+                  <th scope="col">Endereço </th>
+                  <th scope="col">Atividade</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
+                  <th scope="col">Interessado</th>
 
                   
                 </tr>
@@ -38,6 +51,10 @@
                        <tr>
                         <td>{{ $demand->date_input_demand->format('d/m/y')}}</td>
                         <td>{{ $demand->date_distribution_demand->format('d/m/y')}}</td>
+                        <td>{{ $demand->delivery_demand->format('d/m/y')}}</td>
+                        <td>{{ $demand->activities[0]->activity_name}}</td>
+
+
                         
                        {{-- <td width="150">
                             <a href="{{ route('activities.show', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Demand;
+use App\Models\Activity;
+
 
 class DemandController extends Controller
 {
@@ -14,7 +16,9 @@ class DemandController extends Controller
      */
     public function index()
     {
-        $demands = Demand::all();
+       
+        $demands = Demand::with('activities')->get();
+
         return view('demands.index' , compact ('demands'));
     }
 
