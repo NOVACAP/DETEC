@@ -31,10 +31,10 @@
                   <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Demandas</a>
+                  <a class="nav-link" href="{{route('demands.index')}}">Demandas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Atividades</a>
+                  <a class="nav-link" href="{{route('activities.index')}}">Atividades</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link">Teste</a>

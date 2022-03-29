@@ -37,7 +37,7 @@ class DemandController extends Controller
      */
     public function create()
     {
-        //
+        return view('demands/create');
     }
 
     /**
