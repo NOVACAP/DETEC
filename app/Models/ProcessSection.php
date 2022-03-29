@@ -13,11 +13,11 @@ class ProcessSection extends Model
     
     //relationship one to many with section table
     public function section(){
-        return $this->belongsTo(Section::class , 'foreign_key');
+        return $this->belongsTo(Section::class , 'id' , 'section_id' );
     }
 
-    public function process(){
-        return $this->belongsToMany(Process::class);
+    public function processes(){
+        return $this->belongsToMany(Process::class , 'id' , 'process_id');
     }
 
     

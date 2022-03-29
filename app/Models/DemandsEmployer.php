@@ -12,11 +12,11 @@ class DemandsEmployer extends Model
     use HasFactory;
 
     public function demand(){
-        return $this->belongsTo(Demand::class , 'foreign_key');
+        return $this->belongsTo(Demand::class , 'id' , 'demand_id');
     }
 
     public function employers(){
-        return $this->belongsToMany(Employer::class, 'foreign_key');
+        return $this->belongsToMany(Employer::class, 'id' , 'employer_id');
     }
     
 }

@@ -20,7 +20,7 @@
             </div>
           <div class="card-body">
 
-          {{dd($demands) ; }}
+          {{--dd($demands) --}}
           
             <table class="table table-striped table-hover">
               <thead>
@@ -30,16 +30,10 @@
                   <th scope="col">Data de entrega</th>
                   <th scope="col">Endereço </th>
                   <th scope="col">Atividade</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-                  <th scope="col">Interessado</th>
-
-                  
+                  <th scope="col">Área técnica</th>
+                  <th scope="col">Área temática</th>
+                  <th scope="col">Região administrativa</th>
+                  <th scope="col">Processo</th>
                 </tr>
               </thead>
               <tbody>
@@ -52,10 +46,12 @@
                         <td>{{ $demand->date_input_demand->format('d/m/y')}}</td>
                         <td>{{ $demand->date_distribution_demand->format('d/m/y')}}</td>
                         <td>{{ $demand->delivery_demand->format('d/m/y')}}</td>
+                        <td>{{ $demand->address_demand}}</td>
                         <td>{{ $demand->activities[0]->activity_name}}</td>
-
-
-                        
+                        <td>{{ $demand->techniqueAreas[0]->technique_area_name}}</td>
+                        <td>{{ $demand->thematicArea->thematic_area_name}}</td>
+                        <td>{{ $demand->administrativeRegion->administrative_region_name}}</td>
+                        <td>{{ $demand->process->number_process}}</td>
                        {{-- <td width="150">
                             <a href="{{ route('activities.show', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
                             <a href="{{ route('contacts.edit', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>

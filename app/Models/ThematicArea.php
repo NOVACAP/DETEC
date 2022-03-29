@@ -12,9 +12,9 @@ class ThematicArea extends Model
 
     use HasFactory;
 
-    public function demands(){
-        return $this->hasMany(Demand::class , 'foreign_key');
-    }
+    /*public function demands(){
+        return $this->hasMany(Demand::class);
+    }*/
 
     
 }

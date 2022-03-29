@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Demand;
 
 class TechniqueArea extends Model
 {
@@ -11,9 +12,8 @@ class TechniqueArea extends Model
 
     use HasFactory;
 
-    public function demands(){
-        return $this->belongsToMany(demands::class , 'foreign_key');
-    }
-
-    
+    /*public function demands(){
+        return $this->belongsToMany(Demand::class);
+    } 
+    */   
 }

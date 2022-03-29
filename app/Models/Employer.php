@@ -11,11 +11,11 @@ class Employer extends Model
     protected $fillable = ['employer_name' , 'employer_registration' , 'employer_function' , 'demands_employer_id' ];
 
     public function demandEmployers(){
-        return $this->belongsToMany(DemandEmployer::class , 'foreign_key');
+        return $this->hasMany(DemandEmployer::class ,'id' , 'demands_employer_id ');
     }
 
     public function employerType(){
-        return $this->belongsTo(EmployerType::class , 'foreign_key');
+        return $this->hasOne(EmployerType::class , 'foreign_key');
     }
 
     public function user(){

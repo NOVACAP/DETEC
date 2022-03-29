@@ -12,7 +12,7 @@ class Interested extends Model
     use HasFactory;
 
     public function demands(){
-        return $this->hasMany(Demand::class , 'foreign_key');
+        return $this->belongsToMany(Demand::class , 'foreign_key');
     }
     
    

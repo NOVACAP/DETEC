@@ -10,6 +10,7 @@ use App\Models\ThematicArea;
 use App\Models\DemandsEmployer;
 use App\Models\TechniqueArea;
 use App\Models\Activity;
+use App\Models\Process;
 
 
 class Demand extends Model
@@ -38,31 +39,35 @@ class Demand extends Model
 
     //relationship one to many with interested table
       public function interested(){
-        return $this->belongsTo(Interested::class , 'foreign_key');
+        return $this->hasOne(Interested::class , 'id' , 'interested_id');
       }
 
       //relationship one to many with thematicAreatable
       public function thematicArea(){
-        return $this->belongsTo(ThematicArea::class , 'foreign_key');
+        return $this->hasOne(ThematicArea::class , 'id' , 'thematic_areas_id');
       }
 
       //relationship one to many with administrativeRegion
       public function administrativeRegion(){
-        return $this->belongsTo(AdministrativeRegion::class , 'foreign_key');
+        return $this->hasOne(AdministrativeRegion::class , 'id' , 'administrative_region_id');
       }
 
-      public function DemandsEmployer(){
-        return $this->belongsToMany(DemandsEmployer::class , 'foreign_key');
+      public function demandsEmployer(){
+        return $this->hasMany(DemandsEmployer::class ,  'id' , 'demands_employer_id');
       }
 
-      public function techniqueArea(){
-        return $this->belongsToMany(TechniqueArea::class , 'foreign_key');
+      public function techniqueAreas(){
+        return $this->hasMany(TechniqueArea::class , 'id' , 'technique_area_id');
       }
 
       //classe, id da tabela activities, campo da tabela demanda que faz referencia a tabela activities 
       public function activities(){
         return $this->hasMany(Activity::class , 'id' , 'activity_id');
     }
+
+    public function process(){
+      return $this->hasOne(Process::class , 'id' , 'process_id');
+  }
       
     
 }    
