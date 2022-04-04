@@ -36,7 +36,7 @@ class ProcessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

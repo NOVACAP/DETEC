@@ -9,6 +9,11 @@ use App\Models\Demand;
 
 class DemandController extends Controller
 {
+    //verify if user is loggin
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
     /**
      * Display a listing of the resource.
      *
