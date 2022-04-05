@@ -16,7 +16,7 @@ class Process extends Model
         return $this->hasMany(Section::class);
     }
 
-    public function processes(){
+    public function demands(){
         return $this->belongsToMany(Demand::class);
     }
     

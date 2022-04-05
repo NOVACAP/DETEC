@@ -17,7 +17,7 @@ class ProcessSection extends Model
     }
 
     public function processes(){
-        return $this->belongsToMany(Process::class , 'id' , 'process_id');
+        return $this->belongsTo(Process::class , 'id' , 'process_id');
     }
 
     
