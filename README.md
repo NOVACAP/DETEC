@@ -79,8 +79,9 @@
 3. Run cp .env.example .env
 4. Run php artisan key:generate
 5. Run php artisan migrate, before set conf to database
-6. Run php artisan serve
-7. Go to link localhost:8000
+6. Run php artisan db:seed
+7. Run php artisan serve
+8. Go to link localhost:8000
 
 
 ## About Laravel
