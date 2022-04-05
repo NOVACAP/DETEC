@@ -9,7 +9,7 @@ use App\Models\Demand;
 
 class DemandController extends Controller
 {
-    //verify if user is loggin
+    //verify if user logged in
     public function __construct()
     {
         $this->middleware('auth');
@@ -19,7 +19,7 @@ class DemandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function demandsWithRelationships()
     {
        
         $demands = Demand::with(
