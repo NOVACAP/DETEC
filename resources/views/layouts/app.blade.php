@@ -41,7 +41,7 @@
                             <a class="nav-link" href="#">Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{route('demands.index')}}">Demandas</a>
+                            <a class="nav-link" href="{{route('demands.relations')}}">Demandas</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="{{route('activities.index')}}">Atividades</a>

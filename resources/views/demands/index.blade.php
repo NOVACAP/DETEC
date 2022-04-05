@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-header card-title">
               <div class="d-flex align-items-center">
-                <h2 class="mb-0">Todas as demandas</h2>
+                <h2 class="mb-0"><strong> Todas as demandas </strong></h2>
                 <div class="ml-auto">
                   <a href="{{route('demands.create')}}" class="btn btn-success">
                       <i class="fa fa-plus-circle"></i> +</a>
@@ -22,7 +22,7 @@
             </div>
           <div class="card-body">
 
-          {{--dd($demands) --}}
+         {{--dd($demands)--}}
           
             <table class="table table-striped table-hover">
               <thead>
