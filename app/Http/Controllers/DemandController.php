@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Demand;
+use App\Models\Activity;
+use App\Models\Interested;
+use App\Models\ThematicArea;
+use App\Models\AdministrativeRegion;
+
 
 
 
@@ -48,7 +53,18 @@ class DemandController extends Controller
      */
     public function create()
     {
-        return view('demands/create');
+        $activities = Activity::get();
+        $administrativeRegions = AdministrativeRegion::get();
+        $interesteds = Interested::get();
+        
+        
+
+        return view('demands/create' , [
+            'activities' => $activities,
+            'administrativeRegions' => $administrativeRegions,
+            'interesteds' => $interesteds,
+        
+        ]);
     }
 
     /**
@@ -59,7 +75,7 @@ class DemandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
