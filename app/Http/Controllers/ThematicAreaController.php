@@ -7,6 +7,13 @@ use App\Models\ThematicArea;
 
 class ThematicAreaController extends Controller
 {
+
+    //verify if user logged in
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
+    
     /**
      * Display a listing of the resource.
      *

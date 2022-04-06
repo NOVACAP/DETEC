@@ -68,6 +68,18 @@
 57. php artisan make:migration add_employer_id_to_users_table
 58. defining relationships users and employers
 
+Branch
+1. Install nodejs
+2. composer require laravel/ui
+3.  Install Laravel UI, run composer require laravel/ui
+4. php artisan ui bootstrap --auth
+5. npm install
+6. npm run dev
+7. npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
+8. npm run dev
+9. update view demands/index
+10. add method __construct() in DemandController
+
 
 
 

@@ -7,6 +7,12 @@ use App\Models\Process;
 
 class ProcessController extends Controller
 {
+    //verify if user logged in
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
+    
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +42,7 @@ class ProcessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

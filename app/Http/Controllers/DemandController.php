@@ -9,12 +9,23 @@ use App\Models\Demand;
 
 class DemandController extends Controller
 {
+    //verify if user logged in
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+     public function index ()
+     {
+         
+     }
+
+    public function demandsWithRelationships()
     {
        
         $demands = Demand::with(

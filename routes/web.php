@@ -172,7 +172,7 @@ Route::controller(ProcessController::class)->group(function(){
 
 Route::controller(DemandController::class)->group(function(){
 
-    Route::get('demands', 'index')->name('demands.index');
+    Route::get('demands', 'demandsWithRelationships')->name('demands.relations');
 
     Route::post('demands', 'store')->name('demands.store');
 
@@ -189,11 +189,6 @@ Route::controller(DemandController::class)->group(function(){
 });
 
 
+Auth::routes();
 
-
-
-
-
-
-
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
