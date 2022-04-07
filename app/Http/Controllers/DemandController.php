@@ -7,6 +7,7 @@ use App\Models\Demand;
 use App\Models\Activity;
 use App\Models\Interested;
 use App\Models\ThematicArea;
+use App\Models\TechniqueArea;
 use App\Models\AdministrativeRegion;
 
 
@@ -56,13 +57,15 @@ class DemandController extends Controller
         $activities = Activity::get();
         $administrativeRegions = AdministrativeRegion::get();
         $interesteds = Interested::get();
-        
-        
+        $techniqueAreas = TechniqueArea::get();
+        $techniqueAreas = TechniqueArea::get();          
 
         return view('demands/create' , [
             'activities' => $activities,
             'administrativeRegions' => $administrativeRegions,
             'interesteds' => $interesteds,
+            'techniqueAreas' => $techniqueAreas,
+            'techniqueAreas' => $techniqueAreas,
         
         ]);
     }
@@ -75,7 +78,28 @@ class DemandController extends Controller
      */
     public function store(Request $request)
     {
-        
+       /*  Demand::create([
+            'date_input_demand' => $request -> date_input_demand,
+        ]); */
+       
+            $request->validate([
+                'date_input_demand' => 'required',
+                'date_distribution_demand' => 'required',
+                'address_demand' => 'required',
+                'activity_id'  => 'required',
+                'interested_id' => 'required',
+                'technique_area_id' => 'required',
+                'thematic_areas_id' => 'required',
+                'administrative_region_id' => 'required',
+                'demands_employer_id' => 'required',
+            ]);
+       
+     Demand::create($request->all());
+        //$demand -> save();
+       return redirect()->route('demands.create');
+
+            //$data = process
+            //$id = this->create($data)->id;
     }
 
     /**

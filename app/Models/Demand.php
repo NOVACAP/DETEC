@@ -18,7 +18,7 @@ class Demand extends Model
     protected $fillable = [
         'date_input_demand' ,
         'date_distribution_demand',
-        'delivery_demand' ,
+        'delivery_demand' , //null
         'address_demand',
         'activity_id',
         'interested_id',
@@ -33,6 +33,10 @@ class Demand extends Model
         'date_input_demand',
         'date_distribution_demand',
         'delivery_demand',
+    ];
+
+    protected $casts = [
+      'thematic_areas' => 'array'
     ];
 
       use HasFactory;

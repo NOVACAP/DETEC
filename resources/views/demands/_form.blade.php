@@ -63,7 +63,7 @@
                 <div class="form-group row">
                   <label for="first_name" class="col-md-3 col-form-label">Endereço</label>
                   <div class="col-md-9">
-                    <input type="text" name="address_demand" value="{{old('address_demand')}}">
+                    <textarea type="text" name="address_demand" value="{{old('address_demand')}}">{{old('address_demand')}} </textarea>
                     
                     {{--value="
                     {{ old('date_input_demand', $demand->date_input_demand)}}" 
@@ -79,29 +79,6 @@
                   </div>
                 </div>
 
-                <div class="col-md-12">
-                    <div class="form-group row">
-                      <label for="first_name" class="col-md-3 col-form-label">Atividades</label>
-                      <div class="col-md-9">
-                        <select id="activity_id" name="activity_id">
-                            @foreach($activities as $activity)
-                            <option value="{{$activity->id ,old('activity_id')}}">{{$activity->activity_name}}</option>
-                            @endforeach
-                        </select>
-                     
-                        {{--value="
-                        {{ old('date_input_demand', $demand->date_input_demand)}}" 
-                        class="form-control @error('amendment')
-                        is-invalid
-                        @enderror">
-                       @error('amendment')
-                             <div class="invalid-feedback">
-                                {{ $message }}
-                             </div>
-                        @enderror
-                          --}}
-                      </div>
-                    </div>
                 
                 
 
@@ -153,7 +130,40 @@
                                   --}}
                              </div>
                         </div>
+
+                        <div class="form-group">
+                          <label for="techniqueAreas">Área tecnica:</label>
+                          <div class="form-group">
+                            @foreach ($techniqueAreas as $techniqueArea)
+                              <div class="form-group">
+                                  <input type="checkbox" name="technique_area_id" value="{{$techniqueArea -> id }}"> {{$techniqueArea -> technique_area_name }}
+                                </div>  
+                            @endforeach
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="techniqueAreas">Atividades:</label>
+                            <div class="form-group">
+                              @foreach ($activities as $activity)
+                                <div class="form-group">
+                                    <input type="checkbox" name="activity_id" value="{{$activity -> id }}"> {{$activity -> activity_name}}
+                                  </div>  
+                              @endforeach
+                          </div> 
+                      
+                             
                         <button type="submit" class="btn btn-info">Criar</button>
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
     </div>
   </div>
 
