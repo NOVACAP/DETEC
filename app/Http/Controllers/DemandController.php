@@ -58,14 +58,14 @@ class DemandController extends Controller
         $administrativeRegions = AdministrativeRegion::get();
         $interesteds = Interested::get();
         $techniqueAreas = TechniqueArea::get();
-        $techniqueAreas = TechniqueArea::get();          
+        $thematicAreas = ThematicArea::get();          
 
         return view('demands/create' , [
             'activities' => $activities,
             'administrativeRegions' => $administrativeRegions,
             'interesteds' => $interesteds,
             'techniqueAreas' => $techniqueAreas,
-            'techniqueAreas' => $techniqueAreas,
+            'thematicAreas' => $thematicAreas,
         
         ]);
     }
