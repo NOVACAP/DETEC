@@ -11,6 +11,7 @@ use App\Models\DemandsEmployer;
 use App\Models\TechniqueArea;
 use App\Models\Activity;
 use App\Models\Process;
+use App\Models\Employer;
 
 
 class Demand extends Model
@@ -23,10 +24,10 @@ class Demand extends Model
         'activity_id',
         'interested_id',
         'technique_area_id',
-        'thematic_areas_id',
+        'thematic_area_id',
         'administrative_region_id',
         'process_id',
-        'demands_employer_id',
+        
       ];
 
       protected $dates = [
@@ -72,6 +73,10 @@ class Demand extends Model
     public function process(){
       return $this->hasOne(Process::class , 'id' , 'process_id');
   }
+
+  public function employers(){
+    return $this->belongsToMany(Employer::class);
+}
       
     
 }    

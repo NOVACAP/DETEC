@@ -9,6 +9,7 @@ use App\Models\Interested;
 use App\Models\ThematicArea;
 use App\Models\TechniqueArea;
 use App\Models\AdministrativeRegion;
+use App\Models\Process;
 
 
 
@@ -81,7 +82,18 @@ class DemandController extends Controller
        /*  Demand::create([
             'date_input_demand' => $request -> date_input_demand,
         ]); */
-       
+
+
+        $process = new Process();
+        $process->number_process= $request->number_process;
+        $process-> $request->validate([
+            'number_process' => 'required',
+        ]);
+
+        $process->save();
+
+
+
             $request->validate([
                 'date_input_demand' => 'required',
                 'date_distribution_demand' => 'required',
@@ -89,9 +101,10 @@ class DemandController extends Controller
                 'activity_id'  => 'required',
                 'interested_id' => 'required',
                 'technique_area_id' => 'required',
-                'thematic_areas_id' => 'required',
+                'thematic_area_id' => 'required',
                 'administrative_region_id' => 'required',
                 'demands_employer_id' => 'required',
+                'number_process' => 'required',
             ]);
        
      Demand::create($request->all());

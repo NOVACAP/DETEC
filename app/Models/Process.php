@@ -13,7 +13,7 @@ class Process extends Model
     use HasFactory;
     
     public function sections(){
-        return $this->hasMany(Section::class);
+        return $this->belongsToMany(Section::class);
     }
 
     public function demands(){

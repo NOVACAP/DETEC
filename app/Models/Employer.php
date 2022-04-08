@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Demand;
+
 
 class Employer extends Model
 
@@ -15,11 +17,15 @@ class Employer extends Model
     }
 
     public function employerType(){
-        return $this->hasOne(EmployerType::class , 'foreign_key');
+        return $this->hasOne(EmployerType::class , 'id' , 'employer_type_id');
     }
 
     public function user(){
-        return $this->belongsTo(Employer::class , 'foreign_key');
+        return $this->belongsTo(Employer::class , 'id' , 'user_id');
+    }
+
+    public function demands(){
+        return $this->belongsToMany(Demand::class);
     }
 
     use HasFactory;

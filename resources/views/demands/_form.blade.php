@@ -1,7 +1,26 @@
 <div class="row">
     <div class="col-md-12">
       <div class="form-group row">
-        <label for="first_name" class="col-md-3 col-form-label">Data de entrada</label>
+        <label for="number_process" class="col-md-3 col-form-label">Processo</label>
+        <div class="col-md-9">
+          <input type="text" name="number_process" value="{{old('number_process')}}">
+          
+          {{--value="
+          {{ old('date_input_demand', $demand->date_input_demand)}}" 
+          class="form-control @error('amendment')
+          is-invalid
+          @enderror">
+         @error('amendment')
+               <div class="invalid-feedback">
+                  {{ $message }}
+               </div>
+          @enderror
+            --}}
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="date_input_demand" class="col-md-3 col-form-label">Data de entrada</label>
         <div class="col-md-9">
           <input type="date" name="date_input_demand" value="{{old('date_input_demand')}}">
           
@@ -133,9 +152,9 @@
                         <div class="form-group row">
                           <label for="first_name" class="col-md-3 col-form-label">Área temática</label>
                           <div class="col-md-9">
-                            <select id="interested_id" name="interested_id">
+                            <select id="thematic_area_id" name="thematic_area_id">
                                 @foreach($thematicAreas as $thematicArea)
-                                <option value="{{$thematicArea->id ,old('thematic_areas_id')}}">{{$thematicArea->thematic_area_name}}</option>
+                                <option value="{{$thematicArea->id ,old('thematic_area_id')}}">{{$thematicArea->thematic_area_name}}</option>
                                 @endforeach
                             </select>
                          
