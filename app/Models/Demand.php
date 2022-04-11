@@ -29,12 +29,13 @@ class Demand extends Model
         'process_id',
         
       ];
-
+      
       protected $dates = [
         'date_input_demand',
         'date_distribution_demand',
         'delivery_demand',
     ];
+    
 
     protected $casts = [
       'thematic_areas' => 'array'
@@ -49,7 +50,7 @@ class Demand extends Model
 
       //relationship one to many with thematicAreatable
       public function thematicArea(){
-        return $this->hasOne(ThematicArea::class , 'id' , 'thematic_areas_id');
+        return $this->hasOne(ThematicArea::class , 'id' , 'thematic_area_id');
       }
 
       //relationship one to many with administrativeRegion

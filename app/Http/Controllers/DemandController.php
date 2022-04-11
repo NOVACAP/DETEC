@@ -97,28 +97,18 @@ class DemandController extends Controller
             'date_input_demand' => $request -> date_input_demand,
         ]); */
 
-
-        $process = new Process();
-        $process->number_process= $request->number_process;
-        $process-> $request->validate([
-            'number_process' => 'required',
-        ]);
-
-        $process->save();
-
-
-
             $request->validate([
                 'date_input_demand' => 'required',
                 'date_distribution_demand' => 'required',
+                'delivery_demand' => 'nullable',
                 'address_demand' => 'required',
                 'activity_id'  => 'required',
                 'interested_id' => 'required',
                 'technique_area_id' => 'required',
                 'thematic_area_id' => 'required',
                 'administrative_region_id' => 'required',
-                'demands_employer_id' => 'required',
-                'number_process' => 'required',
+                'demands_employer_id' => 'nullable',
+                'process_id' => 'required',
             ]);
        
      Demand::create($request->all());

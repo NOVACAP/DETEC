@@ -53,7 +53,7 @@
                         <td>{{ $demand->activities[0]->activity_name}}</td>
                         <td>{{ $demand->date_input_demand->format('d/m/y')}}</td>
                         <td>{{ $demand->date_distribution_demand->format('d/m/y')}}</td>
-                        <td>{{ $demand->delivery_demand->format('d/m/y')}}</td>
+                        <td>{{ $demand->delivery_demand}}</td>
                         
                         
                         

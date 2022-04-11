@@ -13,7 +13,24 @@
         @endif     
       </div>
 
-      
+      <div class="form-group row">
+        <label for="date_input_demand" class="col-md-3 col-form-label">Data de entrada</label>
+        <div class="col-md-9">
+          <input type="date" name="date_input_demand" value="{{old('date_input_demand')}}">
+          
+          {{--value="
+          {{ old('date_input_demand', $demand->date_input_demand)}}" 
+          class="form-control @error('amendment')
+          is-invalid
+          @enderror">
+         @error('amendment')
+               <div class="invalid-feedback">
+                  {{ $message }}
+               </div>
+          @enderror
+            --}}
+        </div>
+      </div>
       
         <div class="form-group row">
           <label for="first_name" class="col-md-3 col-form-label">Data de distribuição</label>
@@ -36,7 +53,7 @@
         
         
             <div class="form-group row">
-              <label for="first_name" class="col-md-3 col-form-label">Data de distribuição</label>
+              <label for="first_name" class="col-md-3 col-form-label">Data de Entrega</label>
               <div class="col-md-9">
                 <input type="date" name="delivery_demand" value="{{old('delivery_demand')}}">
                 
