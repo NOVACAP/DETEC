@@ -5,6 +5,8 @@
 @section('content')
 
 
+
+
 <main class="py-5">
     <div class="container">
       <div class="row justify-content-md-center">
@@ -14,6 +16,11 @@
               <h2 class="mb-0"> <strong>Criar nova demanda</strong></h2>
             </div>
             <div class="card-body">
+              <div id="search-container" class="col-md-12">
+                @include('demands._search')
+                
+            </div>
+              
               <form action="{{ route('demands.store')}}" method="POST">
                 @csrf
                 @include('demands._form')

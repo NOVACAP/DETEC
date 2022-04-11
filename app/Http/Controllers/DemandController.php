@@ -55,6 +55,18 @@ class DemandController extends Controller
      */
     public function create()
     {
+        //filtro de pesquisa
+        $search = request('search');
+
+        //se tiver algo no campo search
+        if($search){
+            $processes = Process::where([
+                ['number_process' , 'like' ,'%' .$search.'%']
+            ])->get();
+        } else {
+            $processes = Process::all();
+        } 
+
         $activities = Activity::get();
         $administrativeRegions = AdministrativeRegion::get();
         $interesteds = Interested::get();
@@ -67,6 +79,8 @@ class DemandController extends Controller
             'interesteds' => $interesteds,
             'techniqueAreas' => $techniqueAreas,
             'thematicAreas' => $thematicAreas,
+            'processes' => $processes,
+            'search' => $search,
         
         ]);
     }

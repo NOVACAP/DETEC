@@ -1,42 +1,18 @@
 <div class="row">
     <div class="col-md-12">
+      
       <div class="form-group row">
-        <label for="number_process" class="col-md-3 col-form-label">Processo</label>
-        <div class="col-md-9">
-          <input type="text" name="number_process" value="{{old('number_process')}}">
+        <div class="form-group">
+        
+        
+        @if(count($processes) == 1 && $search)
+        <label for="process">Vincular processo a demanda:</label> 
           
-          {{--value="
-          {{ old('date_input_demand', $demand->date_input_demand)}}" 
-          class="form-control @error('amendment')
-          is-invalid
-          @enderror">
-         @error('amendment')
-               <div class="invalid-feedback">
-                  {{ $message }}
-               </div>
-          @enderror
-            --}}
-        </div>
+            <input type="checkbox" name="process_id" value="{{$processes[0] -> id }}"> {{$processes[0]->number_process}}
+          </div>  
+        @endif     
       </div>
 
-      <div class="form-group row">
-        <label for="date_input_demand" class="col-md-3 col-form-label">Data de entrada</label>
-        <div class="col-md-9">
-          <input type="date" name="date_input_demand" value="{{old('date_input_demand')}}">
-          
-          {{--value="
-          {{ old('date_input_demand', $demand->date_input_demand)}}" 
-          class="form-control @error('amendment')
-          is-invalid
-          @enderror">
-         @error('amendment')
-               <div class="invalid-feedback">
-                  {{ $message }}
-               </div>
-          @enderror
-            --}}
-        </div>
-      </div>
       
       
         <div class="form-group row">
