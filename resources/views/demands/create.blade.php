@@ -31,5 +31,13 @@
       </div>
     </div>
   </main>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+<script>
+    $(document).ready(function () { 
+        var $seuCampoCpf = $("#process");
+        $seuCampoCpf.mask('000.000.000-00', {reverse: true});
+    });
+</script>
 @endsection
 

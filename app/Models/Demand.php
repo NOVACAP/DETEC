@@ -39,6 +39,8 @@ class Demand extends Model
 
     protected $casts = [
       'thematic_areas' => 'array'
+      
+      
     ];
 
       use HasFactory;

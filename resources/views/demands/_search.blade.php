@@ -1,6 +1,6 @@
 <h2>Busque um processo</h2>
    <form action="{{ route ('demands.create')}}" method="GET">
-        <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">
+        <input type="text" id="search" name="search" id= "process" class="form-control" placeholder="Procurar">
     </form>
 
     @if($search)
