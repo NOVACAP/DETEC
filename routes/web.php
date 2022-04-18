@@ -170,6 +170,26 @@ Route::controller(ProcessController::class)->group(function(){
 
 });
 
+Route::middleware('auth')->controller(DemandController::class)->group(function(){
+
+    Route::get('demands', 'demandsWithRelationships')->name('demands.relations');
+
+    Route::post('demands', 'store')->name('demands.store');
+
+    Route::get('demands/create', 'create')->name('demands.create');
+
+    Route::get('demands/{item}', 'show')->name('demands.show');
+
+    Route::put('demands/{item}', 'update')->name('demands.update');
+
+    Route::delete('demands/{item}', 'destroy')->name('demands.destroy');
+
+    Route::get('demands/{item}/edit', 'edit')->name('demands.edit');
+
+});
+
+
+/**
 Route::controller(DemandController::class)->group(function(){
 
     Route::get('demands', 'demandsWithRelationships')->name('demands.relations');
@@ -187,6 +207,7 @@ Route::controller(DemandController::class)->group(function(){
     Route::get('demands/{item}/edit', 'edit')->name('demands.edit');
 
 });
+ **/
 
 
 Auth::routes();

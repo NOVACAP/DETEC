@@ -16,11 +16,12 @@ use App\Models\Process;
 
 class DemandController extends Controller
 {
-    //verify if user logged in
+    /**verify if user logged in
     public function __construct()
     {
         $this->middleware('auth');
-    } 
+    }
+    */
     /**
      * Display a listing of the resource.
      *
@@ -29,20 +30,20 @@ class DemandController extends Controller
 
      public function index ()
      {
-         
+
      }
 
     public function demandsWithRelationships()
     {
-       
+
         $demands = Demand::with(
-            'activities' , 
+            'activities' ,
             'techniqueAreas',
             'thematicArea',
             'administrativeRegion',
             'interested',
             'process',
-            'demandsEmployer',      
+            'demandsEmployer',
             )->get();
 
         return view('demands.index' , compact ('demands'));
@@ -55,23 +56,12 @@ class DemandController extends Controller
      */
     public function create()
     {
-        //filtro de pesquisa
-        $search = request('search');
-
-        //se tiver algo no campo search
-        if($search){
-            $processes = Process::where([
-                ['number_process' , 'like' ,'%' .$search.'%']
-            ])->get();
-        } else {
-            $processes = Process::all();
-        } 
-
         $activities = Activity::get();
         $administrativeRegions = AdministrativeRegion::get();
         $interesteds = Interested::get();
         $techniqueAreas = TechniqueArea::get();
-        $thematicAreas = ThematicArea::get();          
+        $thematicAreas = ThematicArea::get();
+        $processes = Process::get();
 
         return view('demands/create' , [
             'activities' => $activities,
@@ -79,9 +69,7 @@ class DemandController extends Controller
             'interesteds' => $interesteds,
             'techniqueAreas' => $techniqueAreas,
             'thematicAreas' => $thematicAreas,
-            'processes' => $processes,
-            'search' => $search,
-        
+            'processes' => $processes
         ]);
     }
 
@@ -107,10 +95,10 @@ class DemandController extends Controller
                 'technique_area_id' => 'required',
                 'thematic_area_id' => 'required',
                 'administrative_region_id' => 'required',
-                'demands_employer_id' => 'nullable',
+                //'demands_employer_id' => 'nullable',
                 'process_id' => 'required',
             ]);
-       
+
      Demand::create($request->all());
         //$demand -> save();
        return redirect()->route('demands.create');
