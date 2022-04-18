@@ -20,7 +20,7 @@ class DemandController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    } 
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,20 +29,20 @@ class DemandController extends Controller
 
      public function index ()
      {
-         
+
      }
 
     public function demandsWithRelationships()
     {
-       
+
         $demands = Demand::with(
-            'activities' , 
+            'activities' ,
             'techniqueAreas',
             'thematicArea',
             'administrativeRegion',
             'interested',
             'process',
-            'demandsEmployer',      
+            'demandsEmployer',
             )->get();
 
         return view('demands.index' , compact ('demands'));
@@ -65,13 +65,13 @@ class DemandController extends Controller
             ])->get();
         } else {
             $processes = Process::all();
-        } 
+        }
 
         $activities = Activity::get();
         $administrativeRegions = AdministrativeRegion::get();
         $interesteds = Interested::get();
         $techniqueAreas = TechniqueArea::get();
-        $thematicAreas = ThematicArea::get();          
+        $thematicAreas = ThematicArea::get();
 
         return view('demands/create' , [
             'activities' => $activities,
@@ -81,7 +81,7 @@ class DemandController extends Controller
             'thematicAreas' => $thematicAreas,
             'processes' => $processes,
             'search' => $search,
-        
+
         ]);
     }
 
@@ -110,7 +110,7 @@ class DemandController extends Controller
                 'demands_employer_id' => 'nullable',
                 'process_id' => 'required',
             ]);
-       
+
      Demand::create($request->all());
         //$demand -> save();
        return redirect()->route('demands.create');
