@@ -67,20 +67,23 @@
 56. defining relationships employer and employer_type
 57. php artisan make:migration add_employer_id_to_users_table
 58. defining relationships users and employers
-59. composer require doctrine/dbal
+59. Install nodejs
+60. composer require laravel/ui
+61.  Install Laravel UI, run composer require laravel/ui
+62. php artisan ui bootstrap --auth
+63. npm install
+64. npm run dev
+65. npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
+66. npm run dev
+67. update view demands/index
+68. add method __construct() in DemandController
+69. Install Brazilian Portuguese language module: run composer require lucascudo/laravel-pt-br-localization --dev
+70. php artisan vendor:publish --tag=laravel-pt-br-localization
+71. Change Line 85 of the file config/app.php to: 'locale' => 'pt-BR'
+72. Change Line 72 of the file config/app.php to: 'timezone' => 'America/Sao_Paulo',
+73. composer require doctrine/dbal
 
 
-Branch
-1. Install nodejs
-2. composer require laravel/ui
-3.  Install Laravel UI, run composer require laravel/ui
-4. php artisan ui bootstrap --auth
-5. npm install
-6. npm run dev
-7. npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
-8. npm run dev
-9. update view demands/index
-10. add method __construct() in DemandController
 
 
 
