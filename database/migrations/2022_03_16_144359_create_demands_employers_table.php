@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('process_sections', function (Blueprint $table) {
+        Schema::create('demands_employers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('section_id')->constrained('sections');
-            $table->foreignId('process_id')->constrained('processes');
+            $table->foreignId('employer_id')->constrained('employers', 'id');
+            $table->foreignId('demand_id')->constrained('demands', 'id');
             $table->timestamps();
         });
     }
@@ -27,7 +27,10 @@ return new class extends Migration
      * @return void
      */
     public function down()
+
     {
-        Schema::dropIfExists('process_sections');
+
+
+        Schema::dropIfExists('demands_employers');
     }
 };

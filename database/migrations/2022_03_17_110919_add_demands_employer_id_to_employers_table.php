@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('employers', function (Blueprint $table) {
-            $table->foreignId('demands_employer_id')->nullable()->constrained('demands_employers')->onDelete('cascade');
-            
-        });
+        // Schema::table('employers', function (Blueprint $table) {
+        // //    $table ->foreignId('demands_employer_id')->nullable();
+
+        // });
     }
 
     /**
@@ -26,9 +26,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('employers', function (Blueprint $table) {
-            $table->dropForeign('employers_demands_employer_id_foreign'); //[table]_[column]_foreign
-            $table->dropColumn('demands_employer_id');
-        });
+        // Schema::table('employers', function (Blueprint $table) {
+        //     // $table->dropForeign('employers_demands_employer_id_foreign'); //[table]_[column]_foreign
+        //     // $table->dropColumn('demands_employer_id');
+            
+        // });
     }
 };

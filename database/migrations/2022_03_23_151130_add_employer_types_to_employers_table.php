@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('employers', function (Blueprint $table) {
-            $table->foreignId('employer_type_id')->nullable()->constrained('employer_types')->onDelete('cascade');
-        });
+//        Schema::table('employers', function (Blueprint $table) {
+//            $table->foreignId('employer_type_id')->nullable()->constrained('employer_types')->onDelete('cascade');
+//        });
     }
 
     /**
@@ -25,9 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('employers', function (Blueprint $table) {
-            $table->dropForeign('employers_employer_type_id_foreign'); //[table]_[column]_foreign
-            $table->dropColumn('employer_type_id');
-        });
+//        Schema::table('employers', function (Blueprint $table) {
+//            $table->dropForeign('employers_employer_type_id_foreign'); //[table]_[column]_foreign
+//            $table->dropColumn('employer_type_id');
+//        });
     }
 };

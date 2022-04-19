@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Activity;
+use Illuminate\Support\Facades\DB;
 
 class ActivitySeeder extends Seeder
 {
@@ -16,24 +17,24 @@ class ActivitySeeder extends Seeder
     public function run()
     {
         //create array for activities
-        $activities = [            
-            ['id' => 1, 'activity_name' => 'ANÁLISE DE PROJETO'],
-            ['id' => 2, 'activity_name' => 'APOIO A FISCALIZAÇÃO DE OBRAS'],
-            ['id' => 3, 'activity_name' => 'ELABORAÇÃO DE PROJETOS'],
-            ['id' => 4, 'activity_name' => 'OUTRAS ATIVIDADES'],
-            ['id' => 5, 'activity_name' => 'TERMO DE REFERÊNCIA'],
-            ['id' => 6, 'activity_name' => 'VISTORIA TÉCNICA'],
+        $activities = [
+            ['activity_name' => 'ANÁLISE DE PROJETO'],
+            ['activity_name' => 'APOIO A FISCALIZAÇÃO DE OBRAS'],
+            ['activity_name' => 'ELABORAÇÃO DE PROJETOS'],
+            ['activity_name' => 'OUTRAS ATIVIDADES'],
+            ['activity_name' => 'TERMO DE REFERÊNCIA'],
+            ['activity_name' => 'VISTORIA TÉCNICA'],
 
         ];
-        
 
+        DB::table('activities')->insert($activities);
 
-        foreach ($activities as $index => $activity) {
-            Activity::updateOrCreate(['id' => $activity['id']], $activity);
-        }
+//        foreach ($activities as $index => $activity) {
+//            Activity::updateOrCreate(['id' => $activity['id']], $activity);
+//        }
 
          /*
-         
+
          updateOrCreate possibilita que a seed seja rodada mais de uma vez  e evita conflito de ID. Além disso acaba com entradas repetidas.
          o foreach abaixo é um exemplo de como daria erro:
 
@@ -43,6 +44,6 @@ class ActivitySeeder extends Seeder
             }
             */
 
-       
+
     }
 }

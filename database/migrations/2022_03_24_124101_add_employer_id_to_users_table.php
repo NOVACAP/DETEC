@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('employer_id')->nullable()->constrained('employers')->onDelete('cascade');
-        });
+//        Schema::table('users', function (Blueprint $table) {
+//            $table->foreignId('employer_id')
+//                ->nullable()
+//                ->constrained('employers')
+//                ->onDelete('cascade');
+//        });
     }
 
     /**
@@ -25,9 +28,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('users_employer_id_foreign'); //[table]_[column]_foreign
-            $table->dropColumn('employer_id');
-        });
+//        Schema::table('users', function (Blueprint $table) {
+//            $table->dropForeign('users_employer_id_foreign'); //[table]_[column]_foreign
+//            $table->dropColumn('employer_id');
+//        });
     }
 };

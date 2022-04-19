@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('processes', function (Blueprint $table) {
-            $table->foreignId('process_section_id')->nullable()->constrained('process_sections')->onDelete('cascade');
-        });
+//        Schema::table('processes', function (Blueprint $table) {
+//            $table->foreignId('process_section_id')->nullable()->constrained('process_sections');
+//        });
     }
 
     /**
@@ -25,9 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('processes', function (Blueprint $table) {
-            $table->dropForeign('processes_process_section_id_foreign'); //[table]_[column]_foreign
-            $table->dropColumn('process_section_id');
-        });
+//        Schema::table('processes', function (Blueprint $table) {
+//            $table->dropForeign('processes_process_section_id_foreign'); //[table]_[column]_foreign
+//            $table->dropColumn('process_section_id');
+//        });
     }
 };

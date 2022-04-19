@@ -19,19 +19,19 @@ return new class extends Migration
             $table->date('date_distribution_demand')->nullable();
             $table->date('delivery_demand')->nullable();
             $table->string('address_demand' , 100);
-           
+
             //foreign
             $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade');
             $table->foreignId('interested_id')->constrained('interesteds')->onDelete('cascade');
             $table->foreignId('technique_area_id')->constrained('technique_areas')->onDelete('cascade');
             $table->foreignId('thematic_area_id')->constrained('thematic_areas')->onDelete('cascade');
             $table->foreignId('administrative_region_id')->constrained('administrative_regions')->onDelete('cascade');
-            $table->foreignId('process_id')->constrained('processes')->onDelete('cascade');
-            $table->foreignId('demands_employer_id')->nullable('demands_employers')->constrained()->onDelete('cascade');
+            //$table->foreignId('process_id')->constrained('processes')->onDelete('cascade');
+            //$table->foreignId('demands_employer_id')->constrained()->onDelete('cascade');
 
             $table->timestamps();
         });
-            
+
     }
 
     /**

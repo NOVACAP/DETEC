@@ -18,4 +18,5 @@ class Activity extends Model
         return $this->belongsToMany(Demands::class);
     }
     */
+
 }

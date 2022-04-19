@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('demands_employers', function (Blueprint $table) {
-            $table->foreignId('demand_id')->nullable()->constrained('demands')->onDelete('cascade');
-        }); 
+         Schema::table('demands_employers', function (Blueprint $table) {
+             //method used for relation tables in laravel 7
+//             $table->foreignId('demand_id')
+//                 ->nullable()
+//                 ->constrained('demands')
+//                 ->onDelete('cascade');
+         });
     }
 
     /**
@@ -25,9 +29,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('demands_employers', function (Blueprint $table) {
-            $table->dropForeign('demands_employers_demand_id_foreign'); //[table]_[column]_foreign
-            $table->dropColumn('demand_id');
-        });
+        // Schema::table('demands_employers', function (Blueprint $table) {
+        //     $table->dropForeign('demands_employers_demand_id_foreign'); //[table]_[column]_foreign
+        //     $table->dropColumn('demand_id');
+        // });
     }
 };

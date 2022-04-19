@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('processes', function (Blueprint $table) {
             $table->id();
-            $table->integer('number_process');
+            $table->string('number_process', '19');
             //$table->unsignedBigInteger('section_process_id')->nullable();
             $table->timestamps();
 
