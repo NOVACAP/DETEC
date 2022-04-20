@@ -20,9 +20,9 @@ class Employer extends Model
         return $this->hasOne(EmployerType::class , 'id' , 'employer_type_id');
     }
 
-    public function user(){
-        return $this->belongsTo(Employer::class , 'id' , 'user_id');
-    }
+    // public function user(){
+    //     return $this->belongsTo(Employer::class , 'id' , 'user_id');
+    // }
 
     public function demands(){
         return $this->belongsToMany(Demand::class);
